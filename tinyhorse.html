@@ -38,8 +38,11 @@
 		  padding: 0;
 		  overflow: hidden;
 		}
+		.nav a:link{
+			text-decoration: none;
+		}
 
-		.nav li a {
+		.nav a {
 		  float: right;
 		  display: block;
 		  color: white;
@@ -49,10 +52,62 @@
 		  text-transform: uppercase;
 		}
 
-		.nav li:hover {
+		.nav a:hover {
 		  text-decoration: underline;
-		  color:orange;
+		  text-decoration-color: #dc786f
 		}
+
+		/* The dropdown container */
+		.dropdown {
+		  float: right;	
+		  overflow: hidden;
+		}
+
+		/* Dropdown button */
+		.dropdown .dropbtn {
+		  font-size: 16px;
+		  border: none;
+		  outline: none;
+		  color: white;
+/*		  padding: 14px 16px;	*/
+		  background-color: inherit;
+		}
+
+		/* Dropdown content (hidden by default) */
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #2d2e32;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		  text-decoration: none;
+
+		}
+		
+
+		/* Links inside the dropdown */
+		.dropdown-content a {
+		  float: none;
+		  color: black;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		  text-align: left; 
+		  color: white;
+		}
+
+		/* Add a grey background color to dropdown links on hover */
+		.dropdown-content a:hover {
+		  background-color: #ddd;
+		}
+
+		/* Show the dropdown menu on hover */
+		.dropdown:hover .dropdown-content {
+		  display: block;
+		}  
+
+
 
 		h1{
 			position: absolute;
@@ -66,7 +121,7 @@
 		.logos{
 			background-image: linear-gradient(to right, #49697d , #cf473b);
 			height: 100px;
-			overflow-y: scroll;
+			overflow-x: scroll;
 		}
 
 		img .logos{
@@ -185,20 +240,21 @@
 
 		/* Clearfix (clear floats) */
 		
-		.footer .row::after {
+		.footer .row:after {
 		  content: "";
 		  clear: both;
 		  display: table;
 		} 
 
-		.footer li a{
+		.contact a:link{
 		  text-decoration: none;
-		  color:white;
+		  color:#dc786f;
 		}
 
-		.footer a:hover {
+		.contact a:hover, a:link {
 		  text-decoration: underline;
-		  color:orange;
+		  color:#dc786f;
+		  text-decoration-color: #dc786f;
 		}
 
 
@@ -217,11 +273,20 @@
 
 			<nav>
 				<ul class="nav">
-				  <li><a >Home</a></li>			  
-					<li><a >Services</a></li>	
-				  <li><a >About</a></li>
-				  <li><a >Careers</a></li>
-				  <li><a >Contact</a></li>
+				  <li><a href="https://tinyhorse.com/#top" >Home</a></li>			  
+					<li class="dropdown">
+					  	<button class="dropbtn">Services
+	      					<i class="fa fa-caret-down"></i>
+	    				</button>
+	    				<div class="dropdown-content">
+	    					<a href="https://tinyhorse.com/content-production/">Content Production</a>
+	      					<a href="https://tinyhorse.com/agency-services/">Agency Services</a>
+	      					<a href="https://tinyhorse.com/brand-partnerships/">Brand Partnerships</a>
+	    				</div>
+	  				</li>							
+				  <li><a href="https://tinyhorse.com/about/" >About</a></li>
+				  <li><a href="https://tinyhorse.com/careers/" >Careers</a></li>
+				  <li><a href="https://tinyhorse.com/contact/" >Contact</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -233,24 +298,62 @@
 
 
 	<div class="logos">
-		<img src="https://tinyhorse.com/wp-content/uploads/2019/08/tiny-horse-GOTR-1.png">
-		<img src="https://tinyhorse.com/wp-content/uploads/2019/05/tiny-horse-ICFOlson-v2.png">
-		<img src="https://tinyhorse.com/wp-content/uploads/2019/05/tiny-horse-ITV-v2.png">
-		<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-MountainKhakis.png">
-		<img src="https://tinyhorse.com/wp-content/uploads/2019/05/tiny-horse-ProcterGamble-v2.png">
-		<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-RadicalMedia.png">
-		<img src="https://tinyhorse.com/wp-content/uploads/2019/05/tiny-horse-Televisa-v2.png">
-		<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-Viacom.png">
-		<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-Walmart.png">
-		<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-Wilderness.png">
-		<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-abc.png">
-		<img src="https://tinyhorse.com/wp-content/uploads/2019/05/tiny-horse-BBC-v2.png">
-		<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-cbs.png">
-
-
-			
-	</div>
-
+		<div class="container-fluid">
+        <div id="carousel-example" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+					<img src="https://tinyhorse.com/wp-content/uploads/2019/08/tiny-horse-GOTR-1.png">
+				</div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+					<img src="https://tinyhorse.com/wp-content/uploads/2019/05/tiny-horse-ICFOlson-v2.png">
+				</div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+					<img src="https://tinyhorse.com/wp-content/uploads/2019/05/tiny-horse-ITV-v2.png">
+				</div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+					<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-MountainKhakis.png">
+				</div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+					<img src="https://tinyhorse.com/wp-content/uploads/2019/05/tiny-horse-ProcterGamble-v2.png">
+				</div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+					<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-RadicalMedia.png">
+				</div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+					<img src="https://tinyhorse.com/wp-content/uploads/2019/05/tiny-horse-Televisa-v2.png">
+				</div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+					<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-Viacom.png">
+				</div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+					<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-Walmart.png">
+				</div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+					<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-Wilderness.png">
+				</div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+					<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-abc.png">
+				</div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+					<img src="https://tinyhorse.com/wp-content/uploads/2019/05/tiny-horse-BBC-v2.png">
+				</div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+					<img src="https://tinyhorse.com/wp-content/uploads/2019/04/tiny-horse-cbs.png">
+				</div>
+			</div>
+          
+            <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+        
+            </a>
+        </div>
+    </div>
+</div>
 
 <div id='medialandscape'>
 		<p> We help you win in the new media landscape </p>
@@ -314,7 +417,7 @@
 
 	<div class="contact">
 		<p> </p>
-		<p>  Don’t be analog, let’s  <span style="color: #e18c84"> <a href="link"><b> connect <b></a></span></p>
+		<p>  Don’t be analog, let’s  <span style="color: #e18c84"> <a href="https://tinyhorse.com/contact/"><b> connect <b></a></span></p>
 	</div> 	
 
 
